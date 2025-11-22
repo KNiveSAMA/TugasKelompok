@@ -1,4 +1,10 @@
+
 * {
+    
+    h3 {
+       text-align: center; /* untuk mengubah jadwal jadi ditengah */
+    }
+
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -13,7 +19,7 @@
 
     /* HEADER */
     header {
-        background-color: #da1414ff;
+        background-color: rgb(50, 20, 218);
         color: #fff;
         text-align: right;
         padding: 10px;
@@ -25,13 +31,13 @@
         justify-content: space-between;
         align-items: center;
         padding: 15px;
-        background-color: #da1818ff;
+        background-color: rgb(53, 24, 218);
     }
 
     nav a {
         margin-left: 15px;
         text-decoration: none;
-        color: black;
+        color: rgb(248, 243, 243);
     }
 
     nav a:hover {
@@ -55,7 +61,7 @@
 
     /* SIDEBAR */
     aside {
-        background: #d3f3d2;
+        background: #b9d4f3;
         padding: 20px;
 
         grid-column: 1 / 2; /* kolom 1 */
@@ -64,7 +70,7 @@
 
     /* ARTICLE 1 */
     .article1 {
-        background: #ffe599;
+        background: hwb(209 72% 11%);
         padding: 20px;
         grid-column: 2 / 3; /* kolom 2 */
         grid-row: 1 / 2;
@@ -72,7 +78,7 @@
 
     /* ARTICLE 2 */
     .article2 {
-        background: #ffe599;
+        background: #b8cfec;
         padding: 20px;
         grid-column: 2 / 3; /* kolom 2 */
         grid-row: 2 / 3;
@@ -80,7 +86,7 @@
 
     /* FOOTER */
     footer {
-        background: #999;
+        background: #0785ec;
         padding: 20px;
         text-align: center;
         color: #fff;

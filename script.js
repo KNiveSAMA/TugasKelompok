@@ -1,5 +1,4 @@
-
-// Data rute dan titik
+// Data rute dan titik.
 const dataRute = {
     1: ["Stasiun A", "Stasiun B", "Stasiun C", "Stasiun D"],
     2: ["Alfa", "Beta", "Charlie"],
