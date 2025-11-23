@@ -1,110 +1,256 @@
 * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-    body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+}
 
-    /* HEADER */
-    header {
-        background-color: #da1414ff;
-        color: #fff;
-        text-align: right;
-        padding: 10px;
-    }
+header {
+    background-color: #da1414;
+    color: #fff;
+    text-align: right;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(218, 20, 20, 0.5);
+}
 
-    /* MENU ATAS */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        background-color: #da1818ff;
-    }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #000;
+    border-bottom: 2px solid #da1414;
+}
 
-    nav a {
-        margin-left: 15px;
-        text-decoration: none;
-        color: black;
-    }
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
 
-    nav a:hover {
-        color: #fff;
-        text-decoration: underline;
-    }
+nav a:hover {
+    color: #ffe599;
+    text-decoration: underline;
+}
 
-    /* ========== GRID LAYOUT ========== */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr;
+    grid-template-rows: auto auto auto;
+    gap: 15px;
+    padding: 20px;
+    background: #000;
+    flex: 1;
+}
+
+aside {
+    background: #111;
+    padding: 25px;
+    color: #fff;
+    border: 1px solid #da1414;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+
+aside h3 {
+    color: #ffe599;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.article1 {
+    background: #111;
+    padding: 20px;
+    color: #fff;
+    border: 1px solid #da1414;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.article1 h2 {
+    color: #ffe599;
+    margin-bottom: 15px;
+}
+
+select {
+    padding: 10px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #da1414;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:hover {
+    border-color: #ffe599;
+    box-shadow: 0 0 5px rgba(255, 229, 153, 0.5);
+}
+
+select:focus {
+    outline: none;
+    border-color: #ffe599;
+    box-shadow: 0 0 8px rgba(255, 229, 153, 0.8);
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #da1414;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[readonly] {
+    background-color: #222;
+}
+
+button {
+    padding: 10px 20px;
+    background: #da1414;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #b01010;
+    box-shadow: 0 4px 8px rgba(218, 20, 20, 0.5);
+}
+
+.article2 {
+    background: #111;
+    padding: 20px;
+    color: #fff;
+    border: 1px solid #da1414;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.article2 h1 {
+    color: #ffe599;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: #000;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-top: 2px solid #da1414;
+}
+
+@media (max-width: 768px) {
     .grid-layout {
-        display: grid;
-
-        /* 3 baris: sidebar, article1, article2 (di desktop sidebar membentang) */
-        grid-template-columns: 1fr 2fr; /* sidebar 1 bagian, konten 2 bagian */
-        grid-template-rows: auto auto auto;
-
-        gap: 15px;
-        padding: 20px;
-        background: #f3f3f3;
-        flex: 1;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
     }
 
-    /* SIDEBAR */
     aside {
-        background: #d3f3d2;
-        padding: 20px;
-
-        grid-column: 1 / 2; /* kolom 1 */
-        grid-row: 1 / 4;    /* sidebar menjulang tinggi (3 baris sekaligus) */
+        grid-column: 1;
+        grid-row: 1;
     }
 
-    /* ARTICLE 1 */
     .article1 {
-        background: #ffe599;
-        padding: 20px;
-        grid-column: 2 / 3; /* kolom 2 */
-        grid-row: 1 / 2;
+        grid-column: 1;
+        grid-row: 2;
     }
 
-    /* ARTICLE 2 */
     .article2 {
-        background: #ffe599;
-        padding: 20px;
-        grid-column: 2 / 3; /* kolom 2 */
-        grid-row: 2 / 3;
+        grid-column: 1;
+        grid-row: 3;
     }
+}
 
-    /* FOOTER */
-    footer {
-        background: #999;
-        padding: 20px;
-        text-align: center;
-        color: #fff;
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2000;
+}
+
+.hamburger.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 28px;
+    background: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background: #111;
+    border-left: 2px solid #da1414;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.5);
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s ease;
+    z-index: 1500;
+}
+
+.side-menu a {
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background: #da1414;
+}
+
+#overlay {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    display:none;
+    z-index: 1400;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
     }
-
-    /* ========== RESPONSIVE (MOBILE) ========== */
-    @media (max-width: 768px) {
-        .grid-layout {
-            grid-template-columns: 1fr; /* jadi satu kolom */
-            grid-template-rows: auto auto auto auto;
-        }
-
-        aside {
-            grid-column: 1;
-            grid-row: 1; /* pindah ke paling atas */
-        }
-
-        .article1 {
-            grid-column: 1;
-            grid-row: 2;
-        }
-
-        .article2 {
-            grid-column: 1;
-            grid-row: 3;
-        }
-    }
+}
