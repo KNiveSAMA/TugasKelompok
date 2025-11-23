@@ -1,9 +1,23 @@
+
 * {
+<<<<<<< HEAD
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+=======
+    
+    h3 {
+       text-align: center; /* untuk mengubah jadwal jadi ditengah */
+    }
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+>>>>>>> origin/main
 
 body {
     min-height: 100vh;
@@ -13,6 +27,7 @@ body {
     color: #fff;
 }
 
+<<<<<<< HEAD
 header {
     background-color: #da1414;
     color: #fff;
@@ -36,6 +51,30 @@ nav a {
     color: #fff;
     transition: color 0.3s ease;
 }
+=======
+    /* HEADER */
+    header {
+        background-color: rgb(50, 20, 218);
+        color: #fff;
+        text-align: right;
+        padding: 10px;
+    }
+
+    /* MENU ATAS */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background-color: rgb(53, 24, 218);
+    }
+
+    nav a {
+        margin-left: 15px;
+        text-decoration: none;
+        color: rgb(248, 243, 243);
+    }
+>>>>>>> origin/main
 
 nav a:hover {
     color: #ffe599;
@@ -174,21 +213,44 @@ footer {
     }
 
     aside {
+<<<<<<< HEAD
         grid-column: 1;
         grid-row: 1;
+=======
+        background: #b9d4f3;
+        padding: 20px;
+
+        grid-column: 1 / 2; /* kolom 1 */
+        grid-row: 1 / 4;    /* sidebar menjulang tinggi (3 baris sekaligus) */
+>>>>>>> origin/main
     }
 
     .article1 {
+<<<<<<< HEAD
         grid-column: 1;
         grid-row: 2;
+=======
+        background: hwb(209 72% 11%);
+        padding: 20px;
+        grid-column: 2 / 3; /* kolom 2 */
+        grid-row: 1 / 2;
+>>>>>>> origin/main
     }
 
     .article2 {
+<<<<<<< HEAD
         grid-column: 1;
         grid-row: 3;
+=======
+        background: #b8cfec;
+        padding: 20px;
+        grid-column: 2 / 3; /* kolom 2 */
+        grid-row: 2 / 3;
+>>>>>>> origin/main
     }
 }
 
+<<<<<<< HEAD
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -254,3 +316,35 @@ footer {
         display: none;
     }
 }
+=======
+    /* FOOTER */
+    footer {
+        background: #0785ec;
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+    }
+
+    /* ========== RESPONSIVE (MOBILE) ========== */
+    @media (max-width: 768px) {
+        .grid-layout {
+            grid-template-columns: 1fr; /* jadi satu kolom */
+            grid-template-rows: auto auto auto auto;
+        }
+
+        aside {
+            grid-column: 1;
+            grid-row: 1; /* pindah ke paling atas */
+        }
+
+        .article1 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .article2 {
+            grid-column: 1;
+            grid-row: 3;
+        }
+    }
+>>>>>>> origin/main
