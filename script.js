@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-// Data rute dan titik.
->>>>>>> origin/main
 const dataRute = {
     1: ["Stasiun Argo Cianjur Jesgejes", "Stasiun Penangkaran Pesut", "Stasiun Pantai Anyer", "Stasiun Lempuyangan"],
     2: ["Stasiun Indah Sulawesi timur", "Stasiun Lumba-Lumba Kudus", "Stasiun Ngawi Shibuya"],
@@ -30,7 +26,7 @@ overlay.addEventListener("click", () => {
     hamburgerBtn.classList.remove("hide");
 });
 
-const hargaPerSegmen = 5000;
+const hargaPerSegmen = 30000;
 
 const selectRute = document.getElementById("rute");
 const selectWaktu = document.getElementById("waktu");
@@ -100,7 +96,6 @@ selectTurun.addEventListener("change", function() {
     inputHarga.value = "Rp " + total.toLocaleString("id-ID");
 });
 
-<<<<<<< HEAD
 btnPesan.addEventListener("click", function() {
     const rute = selectRute.value;
     const waktu = selectWaktu.value;
@@ -126,8 +121,4 @@ btnPesan.addEventListener("click", function() {
 
     localStorage.setItem("pesanan", JSON.stringify(pesanan));
     window.location.href = "konfirmasi.html";
-=======
-    // Tampilkan kode pesanan
-    inputKode.value = "0000000001";  // ← KODE FIXED SESUAI PERMINTAAN
->>>>>>> origin/main
 });
