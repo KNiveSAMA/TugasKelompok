@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Pengguna</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 style="text-align: center; margin-top: 10px">Profile Pengguna</h1>
+    </header>
+
+    <nav>
+      <table width="100%" cellpadding="10">
+        <tr>
+          <td><img src="logo.png" width="60" /></td>
+          <td style="text-align: right">
+            <button id="hamburgerBtn">☰ Menu</button>
+          </td>
+        </tr>
+      </table>
+    </nav>
+
+    <div
+      id="sideMenu"
+      style="display: none; border: 1px solid #ccc; padding: 10px; margin: 10px"
+    >
+      <p><a href="umum.html">Home</a></p>
+      <p><a href="index.html">Pesan Tiket</a></p>
+      <p><a href="profile.html" class="active">Profile</a></p>
+      <p><a href="exchange.html">Exchange</a></p>
+      <p><a href="about.html">About</a></p>
+      <p>
+        <a id="konfirmasi-link" href="konfirmasi.html" style="display: none"
+          >Konfirmasi</a
+        >
+      </p>
+    </div>
+
+    <section>
+      <table
+        align="center"
+        cellpadding="15"
+        style="margin-top: 20px; border: none"
+      >
+        <tr>
+          <td align="center" style="border: none">
+            <img
+              src="profile.jpg"
+              width="140"
+              height="140"
+              style="border-radius: 50%"
+            /><br /><br />
+            <button onclick="gantiFoto()">Ganti Foto</button>
+          </td>
+          <td style="border: none">
+            <h2>Data Pengguna</h2>
+            <table cellpadding="6" style="border: none">
+              <tr>
+                <td><b>Nama</b></td>
+                <td>:</td>
+                <td><span id="p-nama">Rusdi</span></td>
+              </tr>
+              <tr>
+                <td><b>Nomor Telepon</b></td>
+                <td>:</td>
+                <td><span id="p-telp">081234567890</span></td>
+              </tr>
+              <tr>
+                <td><b>Email</b></td>
+                <td>:</td>
+                <td><span id="p-email">rusdiimut@gmail.com</span></td>
+              </tr>
+              <tr>
+                <td><b>ID Pengguna</b></td>
+                <td>:</td>
+                <td><span id="p-id">SONE-712</span></td>
+              </tr>
+            </table>
+            <br />
+            <button onclick="editProfile()">Edit Profil</button>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <footer style="text-align: center; margin-top: 30px">
+      About • Help • Services • References
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const data = JSON.parse(localStorage.getItem("user"));
+        const pesanan = JSON.parse(localStorage.getItem("pesanan"));
+
+        if (pesanan)
+          document.getElementById("konfirmasi-link").style.display = "block";
+        if (!data) return;
+
+        document.getElementById("p-nama").textContent = data.nama || "-";
+        document.getElementById("p-telp").textContent = data.telp || "-";
+        document.getElementById("p-email").textContent = data.email || "-";
+        document.getElementById("p-id").textContent = data.id || "-";
+
+        document.getElementById("hamburgerBtn").onclick = function () {
+          const menu = document.getElementById("sideMenu");
+          menu.style.display = menu.style.display === "none" ? "block" : "none";
+        };
+      });
+
+      function gantiFoto() {
+        alert("Fitur ganti foto belum dibuat.");
+      }
+      function editProfile() {
+        alert("Fitur edit profil belum dibuat.");
+      }
+    </script>
+  </body>
+</html>
+

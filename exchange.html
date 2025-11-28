@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exchange Poin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <p>Exchange</p>
+    </header>
+
+    <nav>
+      <img src="logo.png" style="max-width: 70px" />
+      <div class="hamburger" id="hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <div id="sideMenu" class="side-menu">
+      <a href="umum.html">Home</a>
+      <a href="index.html">Pesan Tiket</a>
+      <a href="profile.html">Profile</a>
+      <a href="exchange.html">Exchange</a>
+      <a href="about.html">About</a>
+      <a id="konfirmasi-link" href="konfirmasi.html" style="display: none"
+        >Konfirmasi</a
+      >
+    </div>
+
+    <div id="overlay"></div>
+
+    <div class="grid-layout">
+      <article class="article1">
+        <h2>Penukaran Poin</h2>
+
+        <p>
+          Total Poin Anda: <strong><span id="poin-user">0</span> poin</strong>
+        </p>
+
+        <div
+          style="
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+          "
+        >
+          <div class="card-diskon">
+            <h3>Diskon 5%</h3>
+            <p>Poin yang dibutuhkan: 50</p>
+            <button onclick="location.href='diskon5.html'">Tukar</button>
+          </div>
+
+          <div class="card-diskon">
+            <h3>Diskon 12%</h3>
+            <p>Poin yang dibutuhkan: 120</p>
+            <button onclick="location.href='diskon12.html'">Tukar</button>
+          </div>
+
+          <div class="card-diskon">
+            <h3>Diskon 25%</h3>
+            <p>Poin yang dibutuhkan: 250</p>
+            <button onclick="location.href='diskon25.html'">Tukar</button>
+          </div>
+
+          <div class="card-diskon">
+            <h3>Diskon 30%</h3>
+            <p>Poin yang dibutuhkan: 300</p>
+            <button onclick="location.href='diskon30.html'">Tukar</button>
+          </div>
+
+          <div class="card-diskon">
+            <h3>Diskon 50%</h3>
+            <p>Poin yang dibutuhkan: 500</p>
+            <button onclick="location.href='diskon50.html'">Tukar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="article2">
+        <h1 style="text-align: center">Informasi Poin</h1>
+        <p>Poin dapat ditukarkan menjadi potongan harga tiket.</p>
+        <p>Semakin besar diskon, semakin banyak poin yang dibutuhkan.</p>
+      </article>
+    </div>
+
+    <footer>About • Help • Services • References</footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const user = JSON.parse(localStorage.getItem("user"));
+        const pesanan = JSON.parse(localStorage.getItem("pesanan"));
+        if (pesanan)
+          document.getElementById("konfirmasi-link").style.display = "block";
+        if (user && user.poin)
+          document.getElementById("poin-user").textContent = user.poin;
+      });
+    </script>
+  </body>
+</html>
+
