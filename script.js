@@ -1,5 +1,5 @@
 const dataRute = {
-    1: ["Stasiun Argo Cianjur Jesgejes", "Stasiun Penangkaran Pesut", "Stasiun Pantai Anyer", "Stasiun Lempuyangan"],
+    1: [ "Stasiun Penangkaran Pesut","Stasiun Argo Cianjur Jesgejes", "Stasiun Pantai Anyer", "Stasiun Lempuyangan"],
     2: ["Stasiun Indah Sulawesi timur", "Stasiun Lumba-Lumba Kudus", "Stasiun Ngawi Shibuya"],
     3: ["Stasiun Jetski Cimahi", "Stasiun Lele Mojo kerto", "Stasiun Pabrik Superstar Asli"]
 };
